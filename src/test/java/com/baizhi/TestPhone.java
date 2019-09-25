@@ -18,7 +18,9 @@ import java.util.Random;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class TestPhone {
-
+/*
+        这是我第一次创建项目
+ */
     //注：有备注无需修改的位置请勿改动
     public static SendSmsResponse testPhoneMsg(String phoneNumbers,String signName,String templateCode,String templateParam) throws Exception{
 
