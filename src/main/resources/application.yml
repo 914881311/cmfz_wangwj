@@ -1,0 +1,24 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /cmfz_wangwj
+    jsp:
+      init-parameters:
+        development: true
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:Mysql://localhost:3306/cmfz
+    username: root
+    password: root
+  servlet:
+    multipart:
+    max-file-size: 300000000  #上传单个文件的大小
+    max-request-size: 1000000000  #一次请求最大携带文件的大小
+mybatis:
+  type-aliases-package: com.baizhi.entity
+  mapper-locations: classpath:com/baizhi/Mapper/*Mapper.xml

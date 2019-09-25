@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.baizhi.dao.ArticleDao">
+    <sql id="querySql">
+      id,title,author,content,crea_date,guru_id
+    </sql>
+
+    <select id="queryByPage" resultType="Article">
+        select <include refid="querySql"/> from article limit #{start},#{rows}
+    </select>
+
+    <select id="queryRecords" resultType="Integer">
+        select count(*) from article
+    </select>
+    <!--删除-->
+    <delete id="delete" parameterType="Article">
+        delete from article where id=#{id}
+    </delete>
+
+    <insert id="save" parameterType="Article">
+        insert into article values(#{id},#{title},#{author},#{content},#{crea_date},#{guru_id})
+    </insert>
+
+    <update id="update" parameterType="Article">
+        update article
+        <set>
+            <if test="title!=null">title=#{title},</if>
+            <if test="author!=null">author=#{author},</if>
+            <if test="content!=null">content=#{content},</if>
+            <if test="crea_date!=null">crea_date=#{crea_date},</if>
+            <if test="guru_id!=null">guru_id=#{guru_id}</if>
+        </set>
+        where id=#{id}
+    </update>
+</mapper>

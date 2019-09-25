@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.baizhi.dao.UserDao">
+    <sql id="querySql">
+      id,avatar,name,Law_name,password,sex,status,phone,crea_date,city,sign
+    </sql>
+
+    <select id="queryByPage" resultType="User">
+        select <include refid="querySql"/> from user limit #{start},#{rows}
+    </select>
+
+    <select id="queryRecords" resultType="Integer">
+        select count(*) from user
+    </select>
+    <!--删除-->
+    <delete id="delete">
+        delete from user where id=#{id}
+    </delete>
+    <update id="update" parameterType="User">
+        update user
+        <set>
+            <if test="avatar!=null">avatar=#{avatar},</if>
+            <if test="name!=null">name=#{name},</if>
+            <if test="Law_name!=null">Law_name=#{Law_name},</if>
+            <if test="password!=null">password=#{password},</if>
+            <if test="sex!=null">sex=#{sex},</if>
+            <if test="status!=null">status=#{status},</if>
+            <if test="phone!=null">phone=#{phone},</if>
+            <if test="crea_date!=null">crea_date=#{crea_date},</if>
+            <if test="city!=null">city=#{city},</if>
+            <if test="sign!=null">sign=#{sign}</if>
+        </set>
+        where id=#{id}
+    </update>
+    <!--展示全部-->
+    <select id="queryAll" resultType="User">
+        select * from user
+    </select>
+</mapper>

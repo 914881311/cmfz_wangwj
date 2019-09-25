@@ -1,0 +1,32 @@
+{
+  "total":"5",
+  "records":"10",
+  "page":"1",
+  "rows":[
+    {
+      "id":"1",
+      "name":"音频1",
+      "url":"1568605065816-4.jpg",
+      "size":"34MB",
+      "duration":"3分33秒",
+      "crea_date":"2012-12-12",
+      "album_id":"1"
+    },{
+      "id":"2",
+      "name":"音频2",
+      "url":"1568605065816-4.jpg",
+      "size":"34MB",
+      "duration":"3分33秒",
+      "crea_date":"2012-12-12",
+      "album_id":"1"
+    },{
+      "id":"3",
+      "name":"音频3",
+      "url":"1568605065816-4.jpg",
+      "size":"34MB",
+      "duration":"3分33秒",
+      "crea_date":"2012-12-12",
+      "album_id":"1"
+    }
+  ]
+}
